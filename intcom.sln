@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "intcom.azure.cloud.services", "intcom.azure.cloud.services\intcom.azure.cloud.services.ccproj", "{AAD9C848-1198-48B6-A983-AFE45997B074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intcom.wcf.services", "intcom.wcf.services\intcom.wcf.services.csproj", "{97E4FA55-E6BE-4E5A-84E0-83F537AF316B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intcom.cloud.services", "intcom.services\intcom.cloud.services.csproj", "{F3E564E4-663D-4D2B-927E-5667837A300B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intcom.models", "intcom.models\intcom.models.csproj", "{A0DB1446-27E3-4E49-8F90-CB3724154EB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intcom.web", "intcom.web\intcom.web.csproj", "{674D0BBE-EB70-4F72-B235-47671B0F8962}"
+	ProjectSection(ProjectDependencies) = postProject
+		{97E4FA55-E6BE-4E5A-84E0-83F537AF316B} = {97E4FA55-E6BE-4E5A-84E0-83F537AF316B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "intcom.web.Tests", "intcom.web.Tests\intcom.web.Tests.csproj", "{D49BFA53-F929-464A-862B-BB951D9F3207}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAD9C848-1198-48B6-A983-AFE45997B074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD9C848-1198-48B6-A983-AFE45997B074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD9C848-1198-48B6-A983-AFE45997B074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD9C848-1198-48B6-A983-AFE45997B074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E4FA55-E6BE-4E5A-84E0-83F537AF316B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E4FA55-E6BE-4E5A-84E0-83F537AF316B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E4FA55-E6BE-4E5A-84E0-83F537AF316B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E4FA55-E6BE-4E5A-84E0-83F537AF316B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E564E4-663D-4D2B-927E-5667837A300B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E564E4-663D-4D2B-927E-5667837A300B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E564E4-663D-4D2B-927E-5667837A300B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E564E4-663D-4D2B-927E-5667837A300B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DB1446-27E3-4E49-8F90-CB3724154EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DB1446-27E3-4E49-8F90-CB3724154EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DB1446-27E3-4E49-8F90-CB3724154EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DB1446-27E3-4E49-8F90-CB3724154EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674D0BBE-EB70-4F72-B235-47671B0F8962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674D0BBE-EB70-4F72-B235-47671B0F8962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674D0BBE-EB70-4F72-B235-47671B0F8962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674D0BBE-EB70-4F72-B235-47671B0F8962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D49BFA53-F929-464A-862B-BB951D9F3207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49BFA53-F929-464A-862B-BB951D9F3207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49BFA53-F929-464A-862B-BB951D9F3207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49BFA53-F929-464A-862B-BB951D9F3207}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.WindowsAzure.Configuration.5.0.1118.2\lib\NET4;packages\EnterpriseLibrary.WindowsAzure.Configuration.5.0.1118.2\DesignTime
+	EndGlobalSection
+EndGlobal
