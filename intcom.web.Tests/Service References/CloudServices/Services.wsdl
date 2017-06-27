@@ -90,7 +90,7 @@
   </wsdl:binding>
   <wsdl:service name="Services">
     <wsdl:port name="BasicHttpBinding_IServices" binding="tns:BasicHttpBinding_IServices">
-      <soap:address location="http://localhost:63771/Services.svc" />
+      <soap:address location="http://localhost:63771/Services.svc/soap" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

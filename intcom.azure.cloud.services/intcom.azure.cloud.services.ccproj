@@ -38,14 +38,6 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\intcom.wcf.services\intcom.wcf.services.csproj">
-      <Name>intcom.wcf.services</Name>
-      <Project>{97e4fa55-e6be-4e5a-84e0-83f537af316b}</Project>
-      <Private>True</Private>
-      <RoleType>Web</RoleType>
-      <RoleName>intcom.wcf.services</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
     <ProjectReference Include="..\intcom.web\intcom.web.csproj">
       <Name>intcom.web</Name>
       <Project>{674d0bbe-eb70-4f72-b235-47671b0f8962}</Project>
@@ -56,8 +48,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="intcom.wcf.services\Content\" />
-    <Folder Include="intcom.wcf.services\" />
     <Folder Include="intcom.wcf.services\Content\" />
     <Folder Include="intcom.webContent\" />
     <Folder Include="intcom.web\" />

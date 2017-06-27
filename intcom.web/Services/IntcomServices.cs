@@ -1,34 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace intcom.web.Services
 {
-    public class IntcomServices
+    public class IntcomServices : IIntcomServices
     {
-        CloudServices.ServicesClient proxy;
+        cloud.services.ICloudServices proxy;
         
         public IntcomServices()
         {
-            
+            proxy = new cloud.services.CloudServices();
         }
 
         public object getAll()
         {
-            proxy = new CloudServices.ServicesClient();
-            return proxy.getAll();
+            object files = proxy.getAll();
+            return files;
         }
 
         public void upload(string[] files)
         {
-            proxy = new CloudServices.ServicesClient();
-            proxy.ulpload(files);            
+            proxy.ulpload(files);
         }
 
         public void download(string key, string destination)
         {
-            proxy = new CloudServices.ServicesClient();
             proxy.download(key, destination);
         }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="P/4C2MEFFqJWHDlonba1La2bE2E=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="9ZRnGYNr6/AGu0ZpH3qdZ/Up6dQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IServices">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IServices" contract="CloudServices.IServices" bindingType="basicHttpBinding" address="http://localhost:63771/Services.svc" bindingConfiguration="BasicHttpBinding_IServices">
+    <endpoint name="BasicHttpBinding_IServices" contract="CloudServices.IServices" bindingType="basicHttpBinding" address="http://localhost:63771/Services.svc/soap" bindingConfiguration="BasicHttpBinding_IServices">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63771/Services.svc</serializedValue>
+          <serializedValue>http://localhost:63771/Services.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

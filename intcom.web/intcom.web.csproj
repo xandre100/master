@@ -262,6 +262,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\logo-intcom.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -296,13 +300,6 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Service References\CloudServices\Services.disco" />
-    <None Include="Service References\CloudServices\configuration91.svcinfo" />
-    <None Include="Service References\CloudServices\configuration.svcinfo" />
-    <None Include="Service References\CloudServices\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Site.Master" />
     <Content Include="Templates\UCDesafio.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -312,16 +309,6 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <None Include="Service References\CloudServices\Services.wsdl" />
-    <None Include="Service References\CloudServices\Services.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CloudServices\Services1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CloudServices\Services2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -473,11 +460,12 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\CloudServices\Reference.cs">
+    <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Services\IIntcomServices.cs" />
     <Compile Include="Services\IntcomServices.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -519,7 +507,13 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\CloudServices\" />
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\intcom.services\intcom.cloud.services.csproj">
+      <Project>{f3e564e4-663d-4d2b-927e-5667837a300b}</Project>
+      <Name>intcom.cloud.services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

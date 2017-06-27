@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -33,14 +34,14 @@ namespace intcom.web.Templates
 
         private void startTests()
         {
-            upload();
+            //upload();
             getAll();            
         }
 
         private void getAll()
         {
             _services = new Services.IntcomServices();
-            var arquivos = _services.getAll();
+            object arquivos = _services.getAll();
         }
 
         private void upload()

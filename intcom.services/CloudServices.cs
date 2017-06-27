@@ -23,7 +23,6 @@ namespace intcom.cloud.services
         
         public void download(string key, string destination)
         {
-
             CloudBlobContainer container = blobClient.GetContainerReference(ConfigurationSettings.DestBlobContainer);
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(key);
             blockBlob.DownloadToFileAsync(destination, FileMode.Create);
@@ -39,7 +38,19 @@ namespace intcom.cloud.services
         public object getAll()
         {
             CloudBlobContainer container = blobClient.GetContainerReference(ConfigurationSettings.DestBlobContainer);
-            return new { arquivos = container.ListBlobs(null, true, BlobListingDetails.All) };
+            object files = new object();
+
+            try
+            {
+                files = container.ListBlobs(null, true, BlobListingDetails.All);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+            return files;
         }       
 
         public void setAccessCondition(long filesize)
@@ -47,27 +58,37 @@ namespace intcom.cloud.services
             throw new NotImplementedException();
         }
 
-        public void ulpload(string[] files)
+        public async void ulpload(string[] files)
         {
             try
             {
                 CloudBlobContainer container = blobClient.GetContainerReference(ConfigurationSettings.DestBlobContainer);
 
-                files.ToList().ForEach(file =>
+                await createNotExitContainer(container);
+
+                files.ToList().ForEach(async file =>
                 {
                     CloudBlockBlob blockBlob = container.GetBlockBlobReference(file);
-                    blockBlob.UploadFromFileAsync(file, getAccessCondition(), getRequestOptions(), new OperationContext());
+                    await blockBlob.UploadFromFileAsync(file, getAccessCondition(), getRequestOptions(), new OperationContext());
                 });
             }
-            catch(AccessViolationException)
+            catch (StorageException)
+            {
+                throw; // new StorageException("Dados Incorretos. Entre em contato com o Administrador.");
+            }
+            catch (AccessViolationException)
             {
                 throw new CloudBlobExceptions("O tamanho do arquivo carregado está acima do limite permitido.");
             }
             catch (Exception)
             {
-
                 throw;
-            }            
+            }
+        }
+
+        private static async Task createNotExitContainer(CloudBlobContainer container)
+        {
+            await container.CreateIfNotExistsAsync();
         }
 
         private static BlobRequestOptions getRequestOptions()
